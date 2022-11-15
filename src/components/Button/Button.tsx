@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
+import classes from './Button.module.scss';
+import classNames from 'classnames';
+import { TypeWithoutClassName } from '../../types';
 
-export interface ButtonProps {
+const classesContext = classNames.bind(classes);
+
+export interface ButtonProps
+  extends TypeWithoutClassName<ButtonHTMLAttributes<HTMLButtonElement>> {
   label: string;
+  className?: string;
 }
 
-const Button = (props: ButtonProps) => {
-  return <button>{props.label}</button>;
+const Button = ({ label, className, ...props }: ButtonProps) => {
+  const buttonClasses = classesContext(className);
+
+  return (
+    <button {...props} className={buttonClasses}>
+      {label}
+    </button>
+  );
 };
 
 export default Button;
