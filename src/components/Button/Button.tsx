@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 import classes from './Button.module.scss';
 import classNames from 'classnames';
 import { TypeWithoutClassName } from '../../types';
@@ -8,6 +8,7 @@ const classesContext = classNames.bind(classes);
 export interface ButtonProps
   extends TypeWithoutClassName<ButtonHTMLAttributes<HTMLButtonElement>> {
   label: string;
+  icon?: ReactNode;
   className?: string;
 }
 
