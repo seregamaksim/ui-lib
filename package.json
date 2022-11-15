@@ -1,13 +1,15 @@
 {
   "name": "@seregamaksim/ui-lib",
-  "version": "0.0.1",
+  "version": "0.0.17",
   "description": "",
   "type": "module",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/seregamaksim"
   },
   "scripts": {
-    "rollup": "rollup -c"
+    "build": "rollup -c",
+    "stylelint": "stylelint \"**/*.scss\"",
+    "stylelint:fix": "stylelint \"**/*.scss\" --fix"
   },
   "author": "",
   "license": "ISC",
@@ -16,16 +18,36 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^9.0.2",
     "@types/react": "^18.0.25",
-    "react": "^18.2.0",
+    "node-sass": "^8.0.0",
+    "postcss": "^8.4.19",
+    "prettier": "^2.7.1",
     "rollup": "^3.3.0",
     "rollup-plugin-dts": "^5.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "stylelint": "^14.15.0",
+    "stylelint-config-idiomatic-order": "^9.0.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-declaration-strict-value": "^1.9.1",
+    "stylelint-group-selectors": "^1.0.9",
+    "stylelint-media-use-custom-media": "^2.0.1",
+    "stylelint-prettier": "^2.0.0",
     "tslib": "^2.4.1",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "typescript-plugin-css-modules": "^3.4.0"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "classnames": "^2.3.2"
+  }
 }
