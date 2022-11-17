@@ -12,7 +12,7 @@ export interface ButtonProps
   className?: string;
 }
 
-const Button = ({ label, className, ...props }: ButtonProps) => {
+export const Button = ({ label, className, ...props }: ButtonProps) => {
   const buttonClasses = classesContext(className);
 
   return (
@@ -21,5 +21,3 @@ const Button = ({ label, className, ...props }: ButtonProps) => {
     </button>
   );
 };
-
-export default Button;
